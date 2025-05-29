@@ -11,8 +11,10 @@ const __filename = fileURLToPath(import.meta.url);
 // get the directory name of the current module
 const __dirname = dirname(__filename);
 
+
+// Serving up the HTML file from the public directory
 app.get("/",(req, res) => {
-    res.sendFile(path)
+    res.sendFile(path.join(__dirname, 'public','index.html'));
 })
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
