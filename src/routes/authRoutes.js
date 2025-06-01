@@ -5,8 +5,12 @@ import db from '../db.js';
 
 const router = express.Router();
 
-router.post('/register', (req, res) => {})
+router.post('/register', (req, res) => {
 
-router.post('/login', (req, res) => {})
+})
+
+router.post('/login', (req, res) => {
+    
+})
 
 export default router
