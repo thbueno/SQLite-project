@@ -5,4 +5,6 @@ import db from '../db.js';
 
 const router = express.Router();
 
+router.post('/register', (req, res) => {})
+
 export default router
