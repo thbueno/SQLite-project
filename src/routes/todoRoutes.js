@@ -12,3 +12,5 @@ router.post('/', (req, res) => {})
 // Update a todo by ID
 router.put('/:id', (req, res) => {});
 
+// Delete a todo by ID
+router.delete('/:id', (req, res) => {});
