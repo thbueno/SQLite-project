@@ -18,6 +18,10 @@ router.post('/register', (req, res) => {
         const insertUser = db.prepare('INSERT INTO users (username, password) VALUES (?, ?)');
         const result = insertUser.run(username, hashedPassword);
 
+        // now that we have the user, i want to add their first todo for them
+        const defaultTodo = `Hello :) add your first todo!`
+        const insertTodo = db.prepare('INSERT INTO todos (user_id, todo) VALUES (?, ?)');
+
     } catch (error) {
         console.log(error.message);
         res.sendStatus(503);
