@@ -8,6 +8,7 @@ const router = express.Router();
 // Register a new user endpoint auth/register
 router.post('/register', (req, res) => {
     const { username, password } = req.body;
+
     // save gilgameshesh in the database
     console.log(username, password);
     res.sendStatus(201)
@@ -15,6 +16,7 @@ router.post('/register', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
+    // we get the email and we look up the password associated with that email in the database
 
     
 })
