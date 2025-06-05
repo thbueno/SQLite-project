@@ -12,8 +12,14 @@ router.post('/register', (req, res) => {
 
     // encrypt the password
     const hashedPassword = bcrypt.hashSync(password, 8);
+    
+    // save the new user and the hashed password in the database
+    try {
 
-    console.log(hashedPassword);
+    } catch (error) {
+        console.log(error.message);
+        res.sendStatus(503);
+    }
 
     res.sendStatus(201)
 
