@@ -8,8 +8,11 @@ const router = express.Router();
 // Register a new user endpoint auth/register
 router.post('/register', (req, res) => {
     const { username, password } = req.body;
-
     // save gilgameshesh in the database
+
+    // encrypt the password
+    const hashedPassword = bcrypt.hashSync(password, 8);
+
     console.log(username, password);
     res.sendStatus(201)
 
