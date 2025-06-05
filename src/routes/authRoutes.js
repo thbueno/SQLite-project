@@ -13,7 +13,8 @@ router.post('/register', (req, res) => {
     // encrypt the password
     const hashedPassword = bcrypt.hashSync(password, 8);
 
-    console.log(username, password);
+    console.log(hashedPassword);
+
     res.sendStatus(201)
 
 })
