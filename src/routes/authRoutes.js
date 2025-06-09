@@ -46,16 +46,19 @@ router.post('/login', (req, res) => {
         const getUser = db.prepare('SELECT * FROM users WHERE username = ?');
         const user = getUser.get(username);
 
+        // if we cannot find a user associated with that username, return out from the function
         if (!user){return res.status(404).json({ message: 'User not found' });
         // create a token
     }
       const passwordIsValid = bcrypt.compareSync(password, user.password);
-      // if the password does not match, return an error
+      // if the password does not match, return out of the function
         if (!passwordIsValid) {
             return res.status(401).json({ message: 'Invalid password' });
-        } 
+        }
+        console.log(user);
 
         // then we have a successful authentication
+        const token = jwt.sign({ id: user.id })
 
     } catch (error) {
         console.log(error.message);
