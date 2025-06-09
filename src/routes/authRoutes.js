@@ -50,9 +50,12 @@ router.post('/login', (req, res) => {
         // create a token
     }
       const passwordIsValid = bcrypt.compareSync(password, user.password);
+      // if the password does not match, return an error
         if (!passwordIsValid) {
             return res.status(401).json({ message: 'Invalid password' });
         } 
+
+        // then we have a successful authentication
 
     } catch (error) {
         console.log(error.message);
