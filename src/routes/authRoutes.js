@@ -5,7 +5,7 @@ import db from '../db.js'
 
 const router = express.Router()
 
-// Register a new user endpoing /auth/registere
+// Register a new user endpoing /auth/registeres
 router.post('/register', (req, res) => {
     const { username, password } = req.body
     // save the username and an irreversibly encrypted password
